@@ -41,4 +41,10 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
     });
 	item.border = 2;
   };
+  
+  $scope.switchValues = function() {
+    tmp = $scope.selectedItem.height;
+	$scope.selectedItem.height = $scope.selectedItem.width;
+	$scope.selectedItem.width = tmp;
+  }
 });
