@@ -16,16 +16,21 @@
   </div>
   
   <div id="sidebar" style="position: absolute; bottom:0px; height:400px; left: 0px; right: 0px;">
-    <div id="items">
-      <table border="0">
-        <tr ng-repeat="item in items">
-          <td ng-click="$scope.selectedItem = item">{{item.name}}{{ selectedItem }}</td>
-		  
-        </tr>
-      </table>
-	</div>
+    <ul>
+	  <li ng-repeat="item in items">
+        <button ng:click="selectItem(item)" >{{item.name}}</button>
+      </li>
+    </ul>	  
 	<div id="selectedItem" style="position: absolute; left: 300px; top: 0px; right: 0px; ">
-	  Name: <input type="text" id="itemNameInput" ng-model="selectedItem.name" />
+	  Name: <input type="text" id="itemNameInput" ng-model="selectedItem.name" /> <br />
+	  Top: <input type="text" id="itemNameInput" ng-model="selectedItem.top" /> <br />
+	  Left: <input type="text" id="itemNameInput" ng-model="selectedItem.left" /> <br />
+	  Height: <input type="text" id="itemNameInput" ng-model="selectedItem.height" /> <br />
+	  Width: <input type="text" id="itemNameInput" ng-model="selectedItem.width" /> <br />
+	  Color: <input type="text" id="itemNameInput" ng-model="selectedItem.color" /> <br />
+	  zIndex: <input type="text" id="itemNameInput" ng-model="selectedItem.zIndex" /> <br />
+	  Group: <input type="text" id="itemNameInput" ng-model="selectedItem.group" /> <br />
+	  
 	</div>
    </div>
 </body>

@@ -22,6 +22,10 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
     
   ];
   
-  $scope.selectedItem = ""
+  $scope.selectItem = function(item) {
+    $scope.selectedItem = item;
+  };
+  
+  $scope.selectedItem = "hej";
   
 });
