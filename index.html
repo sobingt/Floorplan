@@ -15,12 +15,18 @@
 										  z-index: {{item.zIndex}};"></div>
   </div>
   
-  <div id="measurements" style="position: absolute; right:0px; width:200px;">
-    <table border="0">
-      <tr ng-repeat="item in items">
-        <td>{{item.name}}</td>
-      </tr>
-    </table>
+  <div id="sidebar" style="position: absolute; bottom:0px; height:400px; left: 0px; right: 0px;">
+    <div id="items">
+      <table border="0">
+        <tr ng-repeat="item in items">
+          <td ng-click="$scope.selectedItem = item">{{item.name}}{{ selectedItem }}</td>
+		  
+        </tr>
+      </table>
+	</div>
+	<div id="selectedItem" style="position: absolute; left: 300px; top: 0px; right: 0px; ">
+	  Name: <input type="text" id="itemNameInput" ng-model="selectedItem.name" />
+	</div>
    </div>
 </body>
 </html>
