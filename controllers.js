@@ -10,7 +10,7 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
 	{'name': 'Fönster',        'top': 380, 'left': 58,  'height': 4,   'width': 126, 'color': '#fff', 'zIndex': 200, 'border': 0,},
 	
 	
-    {'name': 'Soffa',     'top': 267, 'left': 0,   'height': 90, 'width': 220, 'color': '#c86', 'zIndex': 2, 'border': 0, },
+    {'name': 'Soffa',     'top': 267, 'left': 10,   'height': 90, 'width': 220, 'color': '#c86', 'zIndex': 2, 'border': 0, },
     {'name': 'Soffbord1', 'top': 192, 'left': 50,  'height': 55, 'width': 55,  'color': '#222', 'zIndex': 2, 'border': 0,},
     {'name': 'Soffbord2', 'top': 192, 'left': 110, 'height': 55, 'width': 55,  'color': '#222', 'zIndex': 2, 'border': 0,},
     {'name': 'Tv-bänk',   'top': 11,   'left': 35,  'height': 50, 'width': 191, 'color': '#222', 'zIndex': 2, 'border': 0,},
@@ -26,6 +26,14 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
   $scope.offsetTop = 5;
   $scope.offsetLeft = 5;
   
+  $scope.selectItemInDisplay = function(item) {
+    $scope.selectItem(item);
+  };
+
+  $scope.selectItemInDropDown = function() {
+	$scope.selectItem($scope.mySelect);
+  };  
+  
   $scope.selectItem = function(item) {
     $scope.selectedItem = item;
 	angular.forEach($scope.items, function(anItem) {
@@ -33,7 +41,4 @@ phonecatApp.controller('PhoneListCtrl', function ($scope) {
     });
 	item.border = 2;
   };
-  
-  
-  
 });
