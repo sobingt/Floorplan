@@ -7,7 +7,9 @@
 </head>
 <body ng-controller="PhoneListCtrl">
   <div id="display" style="position: absolute; left: 0px; top: 0px; right: 220px; bottom: 0px; background: #eef;">
-    <div ng-repeat="item in items" style="position: absolute; 
+    <div ng-repeat="item in items" 
+	     ng-show="item.visible"
+	     style="position: absolute; 
 	                                      left: {{item.left*multiplier+offsetLeft}};
 										  top: {{item.top*multiplier+offsetTop}};
 										  width:{{item.width*multiplier}};
@@ -36,6 +38,7 @@
 	    <tr><td>Color:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.color" /></td><td></td></tr>
 	    <tr><td>zIndex:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.zIndex" /></td><td></td></tr>
 	    <tr><td>Group:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.group" /></td><td></td></tr>
+		<tr><td>Visible:</td><td><input type="checkbox" id="itemNameInput" ng-model="selectedItem.visible" /></td><td></td></tr>
 	  </table>
 	</div>
    </div>
