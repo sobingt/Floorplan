@@ -20,21 +20,23 @@
   </div>
   
   <div id="sidebar" style="position: absolute; bottom:0px; height:350px; left: 0px; right: 0px;">
-    <ul style="list-style-type: none;">
-	  <li ng-repeat="item in items" >
-	    <button ng:click="selectItem(item)" >{{item.name}}</button>
-      </li>
-    </ul>	  
+    <table>
+	  <tr ng-repeat="item in items" >
+	    <td><button ng:click="selectItem(item)" style="width: 100%;">{{item.name}}</button></td>
+      </tr>
+    </table>
+	
 	<div id="selectedItem" style="position: absolute; left: 300px; top: 0px; right: 0px; ">
-	  Name: <input type="text" id="itemNameInput" ng-model="selectedItem.name" /> <br />
-	  Top: <input type="text" id="itemNameInput" ng-model="selectedItem.top" /> <br />
-	  Left: <input type="text" id="itemNameInput" ng-model="selectedItem.left" /> <br />
-	  Height: <input type="text" id="itemNameInput" ng-model="selectedItem.height" /> <br />
-	  Width: <input type="text" id="itemNameInput" ng-model="selectedItem.width" /> <br />
-	  Color: <input type="text" id="itemNameInput" ng-model="selectedItem.color" /> <br />
-	  zIndex: <input type="text" id="itemNameInput" ng-model="selectedItem.zIndex" /> <br />
-	  Group: <input type="text" id="itemNameInput" ng-model="selectedItem.group" /> <br />
-	  
+	  <table>
+	    <tr><td>Name:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.name" /></td></tr>
+	    <tr><td>Top:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.top" /></td></tr>
+	    <tr><td>Left:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.left" /></td></tr>
+	    <tr><td>Height:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.height" /></td></tr>
+	    <tr><td>Width:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.width" /></td></tr>
+	    <tr><td>Color:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.color" /></td></tr>
+	    <tr><td>zIndex:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.zIndex" /></td></tr>
+	    <tr><td>Group:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.group" /></td></tr>
+	  </table>
 	</div>
    </div>
 </body>
