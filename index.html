@@ -5,14 +5,23 @@
   <script src="controllers.js"></script>
 </head>
 <body ng-controller="PhoneListCtrl">
-
-  <ul>
-    <li ng-repeat="phone in phones">
-      <span>{{phone.name}}</span>
-      <p>{{phone.snippet}}</p>
-    </li>
-  </ul>
-
+  <div id="display" style="position: absolute; left: 0px; top: 0px; right: 220px; bottom: 0px; background: #eef;">
+    <div ng-repeat="item in items" style="position: absolute; 
+	                                      left: {{item.left*2+20}};
+										  top: {{item.top*2+20}};
+										  width:{{item.width*2}};
+										  height:{{item.height*2}};
+										  background: {{item.color}};
+										  z-index: {{item.zIndex}};"></div>
+  </div>
+  
+  <div id="measurements" style="position: absolute; right:0px; width:200px;">
+    <table border="0">
+      <tr ng-repeat="item in items">
+        <td>{{item.name}}</td>
+      </tr>
+    </table>
+   </div>
 </body>
 </html>
 
