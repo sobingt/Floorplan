@@ -27,6 +27,13 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
   $scope.displayLeft = 10;
   $scope.displayTop = 36;
   
+  $scope.measurementBoxPlacements = [{'name': 'topLeft', 'positionString': 'top: 26px; left: 0px;'},
+									 {'name': 'topRight', 'positionString': 'top: 26px; right: 0px;'},
+									 {'name': 'bottomLeft', 'positionString': 'bottom: 0px; left: 0px;'},
+									 {'name': 'bottomRight', 'positionString': 'bottom: 0px; right: 0px;'},]
+									 
+  $scope.measurementBoxPlacement = $scope.measurementBoxPlacements[0]
+  
   $scope.selectItemInDisplay = function(item) {
     $scope.selectItem(item);
   };

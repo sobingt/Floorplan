@@ -10,5 +10,7 @@ Create a simple floorplan in HTML with Angular
 
 * ~~Move the selected item when the border is applied so that it seem to be in the same place~~
 
-* Button for unselecting everything
+* ~~Button for unselecting everything~~
+
+* ~~Make it possible to change the position of the measurements box~~
 

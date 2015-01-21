@@ -15,8 +15,9 @@
 	  </select>
 	  <input type="checkbox" ng-model="showMeasurements" >Show measurements</input>
 	  <button ng-click="deselectAllItems()" >Deselect item</button>
-	  
-	  <div id="selectedItem" style="position: absolute; left: 0px; top: 26px; background: #6A9EB4; padding: 3px; z-index:1000; " ng-show="showMeasurements">
+  </div>
+
+  <div id="selectedItem" style="position: absolute; {{measurementBoxPlacement.positionString}} background: #6A9EB4; padding: 3px; z-index:1000; " ng-show="showMeasurements">
 	    <table>
 	      <tr><td>Name:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.name" /></td><td></td></tr>
   	      <tr><td>Top:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.top" /></td><td></td></tr>
@@ -27,8 +28,13 @@
 	      <tr><td>zIndex:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.zIndex" /></td><td></td></tr>
 	      <tr><td>Group:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.group" /></td><td></td></tr>
 		  <tr><td>Visible:</td><td><input type="checkbox" id="itemNameInput" ng-model="selectedItem.visible" /></td><td></td></tr>
+		  <tr><td colspan="3">&nbsp;</td></tr>
+		  <tr><td>This box</td><td colspan="2">
+		    <select ng-init="measurementBoxPlacement = measurementBoxPlacement || measurementBoxPlacements[0]" 
+	          ng-model="measurementBoxPlacement" ng-options="item as item.name for item in measurementBoxPlacements" >
+	        </select>
+	      </td></tr>
 	    </table>
-	  </div>
   </div>
   
   
