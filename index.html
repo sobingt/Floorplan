@@ -7,7 +7,31 @@
   
 </head>
 <body ng-controller="PhoneListCtrl">
-  <div id="display" style="position: absolute; left: 0px; top: 0px; right: 220px; bottom: 0px; background: #eef;">
+
+  <div id="sidebar" style="height: 22px; width:100%; background: #C0E8F9; position: absolute; top: 0px; left: 0px; padding: 2px;" >
+      <select ng-init="mySelect = mySelect || items[0]" 
+	          ng-model="mySelect" ng-options="item as item.name for item in items"
+	          ng-change="selectItemInDropDown()" >
+	  </select>
+	  <input type="checkbox" ng-model="showMeasurements" >Show measurements</input>
+	  
+	  <div id="selectedItem" style="position: absolute; left: 0px; top: 26px; background: #6A9EB4; padding: 3px; z-index:1000; " ng-show="showMeasurements">
+	    <table>
+	      <tr><td>Name:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.name" /></td><td></td></tr>
+  	      <tr><td>Top:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.top" /></td><td></td></tr>
+	      <tr><td>Left:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.left" /></td><td></td></tr>
+	      <tr><td>Height:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.height" /></td><td><img src="switch.png" style="width:15px; height:15px;" ng-click="switchValues()" /></td></tr>
+	      <tr><td>Width:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.width" /></td><td></td></tr>
+	      <tr><td>Color:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.color" /></td><td></td></tr>
+	      <tr><td>zIndex:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.zIndex" /></td><td></td></tr>
+	      <tr><td>Group:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.group" /></td><td></td></tr>
+		  <tr><td>Visible:</td><td><input type="checkbox" id="itemNameInput" ng-model="selectedItem.visible" /></td><td></td></tr>
+	    </table>
+	  </div>
+  </div>
+  
+  
+  <div id="display" style=" background: #eef; position: absolute; top: {{displayTop}}px; left: {{displayLeft}}px; width: {{displayWidth()}}px; height: {{displayHeight()}}px;">
     <div ng-repeat="item in items" 
 	     ng-show="item.visible"
 	     style="position: absolute; 
@@ -22,27 +46,6 @@
 										  border-color: #ff0000;" ng:click="selectItemInDisplay(item)" ></div>
   </div>
   
-  <div id="sidebar" style="position: absolute; bottom:0px; height:350px; left: 0px; right: 0px;">
-      <select ng-init="mySelect = mySelect || items[0]" 
-	          ng-model="mySelect" ng-options="item as item.name for item in items"
-			  ng-change="selectItemInDropDown()" >
-	  </select>
-    
-	
-	<div id="selectedItem" style="position: absolute; left: 300px; top: 0px; right: 0px; ">
-	  <table>
-	    <tr><td>Name:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.name" /></td><td></td></tr>
-	    <tr><td>Top:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.top" /></td><td></td></tr>
-	    <tr><td>Left:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.left" /></td><td></td></tr>
-	    <tr><td>Height:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.height" /></td><td><img src="switch.png" style="width:15px; height:15px;" ng-click="switchValues()" /></td></tr>
-	    <tr><td>Width:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.width" /></td><td></td></tr>
-	    <tr><td>Color:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.color" /></td><td></td></tr>
-	    <tr><td>zIndex:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.zIndex" /></td><td></td></tr>
-	    <tr><td>Group:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.group" /></td><td></td></tr>
-		<tr><td>Visible:</td><td><input type="checkbox" id="itemNameInput" ng-model="selectedItem.visible" /></td><td></td></tr>
-	  </table>
-	</div>
-   </div>
 </body>
 </html>
 
