@@ -9,8 +9,12 @@
 <body ng-controller="PhoneListCtrl">
 
   <div id="sidebar" style="height: 22px; width:100%; background: #C0E8F9; position: absolute; top: 0px; left: 0px; padding: 2px;" >
-      <select ng-init="mySelect = mySelect || items[0]" 
-	          ng-model="mySelect" ng-options="item as item.name for item in items"
+      <select ng-init="selectedRoom = selectedRoom || rooms[0]" 
+	          ng-model="selectedRoom" ng-options="room as room.name for room in rooms"
+	          >
+	  </select>
+	  <select ng-init="mySelect = mySelect || selectedRoom.items[0]" 
+	          ng-model="mySelect" ng-options="item as item.name for item in selectedRoom.items"
 	          ng-change="selectItemInDropDown()" >
 	  </select>
 	  <input type="checkbox" ng-model="showMeasurements" >Show measurements</input>
@@ -39,7 +43,7 @@
   
   
   <div id="display" style=" background: #eef; position: absolute; top: {{displayTop}}px; left: {{displayLeft}}px; width: {{displayWidth()}}px; height: {{displayHeight()}}px;">
-    <div ng-repeat="item in items" 
+    <div ng-repeat="item in selectedRoom.items" 
 	     ng-show="item.visible"
 	     style="position: absolute; 
 	                                      left: {{item.left*multiplier+offsetLeft}};
