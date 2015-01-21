@@ -8,7 +8,7 @@ Create a simple floorplan in HTML with Angular
 
 * Have more than 1 room
 
-* Move the selected item when the border is applied so that it seem to be in the same place
+* ~~Move the selected item when the border is applied so that it seem to be in the same place~~
 
 * Button for unselecting everything
 

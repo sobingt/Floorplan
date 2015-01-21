@@ -38,9 +38,15 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
   $scope.selectItem = function(item) {
     $scope.selectedItem = item;
 	angular.forEach($scope.items, function(anItem) {
+	  if (anItem.border == 2) {
+	    anItem.left = anItem.left + 1;
+		anItem.top = anItem.top + 1;
+	  }
       anItem.border = 0;
     });
 	item.border = 2;
+	item.top = item.top - 1;
+	item.left = item.left - 1;
   };
   
   $scope.switchValues = function() {
