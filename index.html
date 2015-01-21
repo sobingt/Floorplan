@@ -14,6 +14,7 @@
 	          ng-change="selectItemInDropDown()" >
 	  </select>
 	  <input type="checkbox" ng-model="showMeasurements" >Show measurements</input>
+	  <button ng-click="deselectAllItems()" >Deselect item</button>
 	  
 	  <div id="selectedItem" style="position: absolute; left: 0px; top: 26px; background: #6A9EB4; padding: 3px; z-index:1000; " ng-show="showMeasurements">
 	    <table>

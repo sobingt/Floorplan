@@ -37,18 +37,21 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
   
   $scope.selectItem = function(item) {
     $scope.selectedItem = item;
-	angular.forEach($scope.items, function(anItem) {
+	$scope.deselectAllItems();
+	item.border = 2;
+	item.top = item.top - 1;
+	item.left = item.left - 1;
+  };
+  
+  $scope.deselectAllItems = function() {
+    angular.forEach($scope.items, function(anItem) {
 	  if (anItem.border == 2) {
 	    anItem.left = anItem.left + 1;
 		anItem.top = anItem.top + 1;
 	  }
       anItem.border = 0;
     });
-	item.border = 2;
-	item.top = item.top - 1;
-	item.left = item.left - 1;
-  };
-  
+  }
   $scope.switchValues = function() {
     tmp = $scope.selectedItem.height;
 	$scope.selectedItem.height = $scope.selectedItem.width;
@@ -58,7 +61,7 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
   $scope.displayWidth = function() {
 	maxWidth = 0;
 	angular.forEach($scope.items, function(item) {
-	  itemMostRight = item.left * $scope.multiplier + $scope.offsetLeft * 2 + item.width * $scope.multiplier;
+	  itemMostRight = item.left * $scope.multiplier + $scope.offsetLeft * 2 + item.width * $scope.multiplier + item.border;
 	  console.log("itemMostRight: " + itemMostRight);
       if (itemMostRight > maxWidth) {
 	    maxWidth = itemMostRight;
@@ -70,7 +73,7 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
   $scope.displayHeight = function() {
     maxHeight = 0;
 	angular.forEach($scope.items, function(item) {
-	  itemMostBottom = item.top * $scope.multiplier + $scope.offsetTop * 2 + item.height * $scope.multiplier;
+	  itemMostBottom = item.top * $scope.multiplier + $scope.offsetTop * 2 + item.height * $scope.multiplier + item.border;
 	  console.log("itemMostBottom: " + itemMostBottom);
       if (itemMostBottom > maxHeight) {
 	    maxHeight = itemMostBottom;
