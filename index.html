@@ -23,17 +23,16 @@
 
   <div id="selectedItem" style="position: absolute; {{measurementBoxPlacement.positionString}} background: #6A9EB4; padding: 3px; z-index:1000; " ng-show="showMeasurements">
 	    <table>
-	      <tr><td>Name:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.name" style="width: 80px;" /></td><td></td></tr>
-  	      <tr><td>Top:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.top" style="width: 80px;" /></td><td></td></tr>
-	      <tr><td>Left:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.left" style="width: 80px;" /></td><td></td></tr>
-	      <tr><td>Height:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.height" style="width: 80px;" /></td><td><img src="switch.png" style="width:15px; height:15px;" ng-click="switchValues()" /></td></tr>
-	      <tr><td>Width:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.width" style="width: 80px;" /></td><td></td></tr>
-	      <tr><td>Color:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.color" style="width: 80px;" /></td><td></td></tr>
-	      <tr><td>zIndex:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.zIndex" style="width: 80px;" /></td><td></td></tr>
-	      <tr><td>Group:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.group" style="width: 80px;" /></td><td></td></tr>
-		  <tr><td>Visible:</td><td><input type="checkbox" id="itemNameInput" ng-model="selectedItem.visible" /></td><td></td></tr>
-		  <tr><td colspan="3">&nbsp;</td></tr>
-		  <tr><td>This box</td><td colspan="2">
+	      <tr><td>Name:</td><td><input type="text" id="itemNameInput" ng-model="selectedItem.name" style="width: 80px;" /></td></tr>
+  	      <tr><td>Top:</td><td ng-repeat="part in selectedItem.parts"><input type="text" id="itemNameInput" ng-model="part.top" style="width: 80px;" /></td></tr>
+	      <tr><td>Left:</td><td ng-repeat="part in selectedItem.parts"><input type="text" id="itemNameInput" ng-model="part.left" style="width: 80px;" /></td></tr>
+	      <tr><td>Height:</td><td ng-repeat="part in selectedItem.parts"><input type="text" id="itemNameInput" ng-model="part.height" style="width: 80px;" /></td></tr>
+	      <tr><td>Width:</td><td ng-repeat="part in selectedItem.parts"><input type="text" id="itemNameInput" ng-model="part.width" style="width: 80px;" /></td></tr>
+	      <tr><td>Color:</td><td ng-repeat="part in selectedItem.parts"><input type="text" id="itemNameInput" ng-model="part.color" style="width: 80px;" /></td></tr>
+	      <tr><td>zIndex:</td><td ng-repeat="part in selectedItem.parts"><input type="text" id="itemNameInput" ng-model="part.zIndex" style="width: 80px;" /></td></tr>
+	      <tr><td>Visible:</td><td><input type="checkbox" id="itemNameInput" ng-model="selectedItem.visible" /></td></tr>
+		  <tr><td>&nbsp;</td></tr>
+		  <tr><td>This box</td><td>
 		    <select ng-init="measurementBoxPlacement = measurementBoxPlacement || measurementBoxPlacements[0]" 
 	          ng-model="measurementBoxPlacement" ng-options="item as item.name for item in measurementBoxPlacements" >
 	        </select>
@@ -43,18 +42,20 @@
   
   
   <div id="display" style=" background: #eef; position: absolute; top: {{displayTop}}px; left: {{displayLeft}}px; width: {{displayWidth()}}px; height: {{displayHeight()}}px;">
-    <div ng-repeat="item in selectedRoom.items" 
+    <div ng-repeat="item in selectedRoom.items" >
+	  <div ng-repeat="part in item.parts"
 	     ng-show="item.visible"
 	     style="position: absolute; 
-	                                      left: {{item.left*multiplier+offsetLeft}};
-										  top: {{item.top*multiplier+offsetTop}};
-										  width:{{item.width*multiplier}};
-										  height:{{item.height*multiplier}};
-										  background: {{item.color}};
-										  z-index: {{item.zIndex}};
-										  border-width: {{item.border}}px;
+	                                      left: {{part.left*multiplier+offsetLeft}};
+										  top: {{part.top*multiplier+offsetTop}};
+										  width:{{part.width*multiplier}};
+										  height:{{part.height*multiplier}};
+										  background: {{part.color}};
+										  z-index: {{part.zIndex}};
+										  border-width: {{part.border}}px;
 										  border-style: solid;
 										  border-color: #ff0000;" ng:click="selectItemInDisplay(item)" ></div>
+    </div>
   </div>
   
 </body>
