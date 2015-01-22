@@ -88,15 +88,43 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
 	  'visible':true ,
 	  'parts' : [
 	    { 'top': 132, 'left': -2, 'height': 96,  'width': 4,   'color': '#fff', 'zIndex': 200, 'border': 0,},
-	  ]}
-	/*{'name': 'Fönster',          'top': 380, 'left': 58,  'height': 4,   'width': 126, 'color': '#fff', 'zIndex': 200, 'border': 0,},
+	  ]},
+	{'name': 'Fönster',
+	  'visible':true ,
+	  'parts' : [
+	    {          'top': 380, 'left': 58,  'height': 4,   'width': 126, 'color': '#fff', 'zIndex': 200, 'border': 0,},
+	  ]},
 	
-    {'name': 'Säng',     'top': 100,  'left': 140,   'height': 180, 'width': 200, 'color': '#fff', 'zIndex': 2, 'border': 0,},
-    {'name': 'Headboard', 'top': 70,  'left': 339,  'height': 240, 'width': 8,  'color': '#222', 'zIndex': 2, 'border': 0,},
-    {'name': 'Garderob1', 'top': 0, 'left': 0, 'height': 60, 'width': 60,  'color': '#fff', 'zIndex': 2, 'border': 0,},
-    {'name': 'Garderob2', 'top': 61,  'left': 0,  'height': 60, 'width': 60, 'color': '#fff', 'zIndex': 2, 'border': 0,},
-    {'name': 'Garderob3', 'top': 244,   'left': 0,   'height': 60, 'width': 60,  'color': '#fff', 'zIndex': 2, 'border': 0,},
-    {'name': 'Garderob4', 'top': 305,  'left': 0, 'height': 60, 'width': 60,  'color': '#fff', 'zIndex': 2, 'border': 0,},*/
+    {'name': 'Säng',
+	  'visible':true ,
+	  'parts' : [
+	    {'top': 100,  'left': 140,   'height': 180, 'width': 200, 'color': '#fff', 'zIndex': 2, 'border': 0,},
+	  ]},
+    {'name': 'Headboard',
+	  'visible':true ,
+	  'parts' : [
+	    { 'top': 70,  'left': 339,  'height': 240, 'width': 8,  'color': '#222', 'zIndex': 2, 'border': 0,},
+	  ]},
+    {'name': 'Garderob1',
+	  'visible':true ,
+	  'parts' : [
+	    { 'top': 0, 'left': 0, 'height': 60, 'width': 60,  'color': '#fff', 'zIndex': 2, 'border': 0,},
+	  ]},
+    {'name': 'Garderob2',
+	  'visible':true ,
+	  'parts' : [
+	    { 'top': 61,  'left': 0,  'height': 60, 'width': 60, 'color': '#fff', 'zIndex': 2, 'border': 0,},
+	  ]},
+    {'name': 'Garderob3',
+	  'visible':true ,
+	  'parts' : [
+	    { 'top': 244,   'left': 0,   'height': 60, 'width': 60,  'color': '#fff', 'zIndex': 2, 'border': 0,},
+	  ]},
+    {'name': 'Garderob4',
+	  'visible':true ,
+	  'parts' : [
+	    { 'top': 305,  'left': 0, 'height': 60, 'width': 60,  'color': '#fff', 'zIndex': 2, 'border': 0,},
+	  ]},
     ]},
 	
 	
