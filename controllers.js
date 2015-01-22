@@ -33,7 +33,14 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
     { 'name': 'Soffa',
 	  'visible':true,
 	  'parts' : [
-        {'top': 267, 'left': 10,   'height': 90, 'width': 220, 'color': '#c86', 'zIndex': 2, 'border': 0,},
+        {'top': 267, 'left': 10,   'height': 90, 'width': 220, 'color': '#c86', 'zIndex': 3, 'border': 0,},
+	  ]},
+    { 'name': 'HartfordSoffa',
+	  'visible':true,
+	  'parts' : [
+        {'top': 181, 'left': 0, 'height': 201, 'width': 70, 'color': '#e11', 'zIndex': 2, 'border': 0,},
+		{'top': 312, 'left': 70, 'height': 70, 'width': 152, 'color': '#e11', 'zIndex': 2, 'border': 0,},
+		{'top': 232, 'left': 202, 'height': 150, 'width': 70, 'color': '#e11', 'zIndex': 2, 'border': 0,},
 	  ]},
     { 'name': 'Soffbord1', 
 	  'visible':true,
@@ -130,7 +137,7 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
 	
 	];
   
-  $scope.selectedRoom = $scope.rooms[1];
+  $scope.selectedRoom = $scope.rooms[0];
   
   $scope.multiplier = 2;
   $scope.offsetTop = 5;
