@@ -185,11 +185,13 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
   $scope.displayWidth = function() {
 	maxWidth = 0;
 	angular.forEach($scope.selectedRoom.items, function(item) {
-	  itemMostRight = item.left * $scope.multiplier + $scope.offsetLeft * 2 + item.width * $scope.multiplier + item.border;
-	  //console.log("itemMostRight: " + itemMostRight);
-      if (itemMostRight > maxWidth) {
-	    maxWidth = itemMostRight;
-	  }
+	  angular.forEach(item.parts, function(part) {
+	    itemMostRight = part.left * $scope.multiplier + $scope.offsetLeft * 2 + part.width * $scope.multiplier + part.border;
+	    //console.log("itemMostRight: " + itemMostRight);
+        if (itemMostRight > maxWidth) {
+	      maxWidth = itemMostRight;
+	    }
+	  });
     });
 	return maxWidth;
   };
@@ -197,11 +199,13 @@ phonecatApp.controller('PhoneListCtrl', function ($scope, $log) {
   $scope.displayHeight = function() {
     maxHeight = 0;
 	angular.forEach($scope.selectedRoom.items, function(item) {
-	  itemMostBottom = item.top * $scope.multiplier + $scope.offsetTop * 2 + item.height * $scope.multiplier + item.border;
-	  //console.log("itemMostBottom: " + itemMostBottom);
-      if (itemMostBottom > maxHeight) {
-	    maxHeight = itemMostBottom;
-	  }
+	  angular.forEach(item.parts, function(part) {
+	    itemMostBottom = part.top * $scope.multiplier + $scope.offsetTop * 2 + part.height * $scope.multiplier + part.border;
+	    //console.log("itemMostBottom: " + itemMostBottom);
+        if (itemMostBottom > maxHeight) {
+	      maxHeight = itemMostBottom;
+	    }
+	  });
     });
 	return maxHeight;
   };
